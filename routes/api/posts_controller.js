@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Posts = require('../../models/Posts');
 
-//CRUD Functionality
+// CRUD Functionality
 router.post('/', async (req, res) => {
     const newPost = new Posts(req.body);
     try {
