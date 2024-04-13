@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { MONGO_URI } = require('./config');
+const dotenv = require('dotenv');
 const postsRoutes = require('./routes/api/posts_controller');
 
 const app = express();
 app.use(express.json());
+dotenv.config();
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
